@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blood Transfusion Service – Donor Questionnaire</title>
+  <link rel="stylesheet" href="donor.css" />
+</head>
+<body>
+    <form onsubmit="return validateForm()" action="register.php" method="post">
+    <fieldset>
+      <legend>Donation Form</legend>
+  <div class="page">
+    <header>
+      <div class="title upper lg">REDFLOW</div>
+      <div class="title upper md">Donor Questionnaire</div>
+    </header>
+
+    <div class="subtitle">Please complete this form</div>
+
+    <form id="donorForm">
+      <div class="grid">
+        <div class="field inline">
+          <label for="panelName">name:</label>
+          <input id="Name" name="Name" type="text" />
+        </div>
+        <div class="field inline">
+          <label for="familyName">Family name:</label>
+          <input id="familyName" name="familyName" type="text" />
+        </div>
+        <div class="field inline">
+          <label for="dob">Date of birth:</label>
+          <input id="dob" name="dob" type="date" />
+        </div>
+        <div class="field inline">
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender">
+            <option value=""></option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="filed inline">
+            <label for="bloodGroup">Blood Group:</label>
+            <div class="custom-select">
+              <select id="bloodGroup" name="bloodGroup">
+                <option value=""></option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+              </select>
+        </div>
+
+        </div><br>
+        <div class="field inline">
+          <label for="dob">Last Date of donation:</label>
+          <input id="dob" name="dob" type="date" />
+        </div><br>
+
+<div class="consent">
+  <label style="display: inline-flex; align-items: center; gap: 6px;">
+    <span style="flex: 1;">Are you interested to donate organs?</span>
+    <input type="checkbox" id="donateOrgan" onclick="toggleOrganList()" />
+</label>
+</div><br>
+
+
+<div class="consent" id="organList" style="display: none; margin-top: 12px;">
+  <p><strong>Select Organs to Donate:</strong></p>
+
+  <label><input type="checkbox" name="organs[]" value="kidney"> Kidney</label><br>
+  <label><input type="checkbox" name="organs[]" value="liver"> Liver</label><br>
+  <label><input type="checkbox" name="organs[]" value="heart"> Heart</label><br>
+  <label><input type="checkbox" name="organs[]" value="lungs"> Lungs</label><br>
+  <label><input type="checkbox" name="organs[]" value="pancreas"> Pancreas</label><br>
+  <label><input type="checkbox" name="organs[]" value="eyes"> Eyes (Cornea)</label>
+</div>
+
+        <div class="field inline full">
+          <label for="occupation">Occupation:</label>
+          <input id="occupation" name="occupation" type="text" />
+        </div>
+        <div class="field inline full">
+          <label for="residential">Residential address:</label>
+          <input id="residential" name="residential" type="text" />
+        </div>
+        <div class="field inline full">
+          <label for="postal">Postal address:</label>
+          <input id="postal" name="postal" type="text" />
+        </div>
+        <div class="thirds full">
+          <div class="field inline">
+            <label for="phoneHome">Telephone no:</label>
+            <input id="phoneHome" name="phoneHome" type="tel" />
+          </div>
+          <div class="field inline">
+            <label for="phoneMobile">Mobile:</label>
+            <input id="phoneMobile" name="phoneMobile" type="tel" />
+          </div>
+        </div>
+        <div class="field inline full">
+          <label for="email">E-mail address:</label>
+          <input id="email" name="email" type="email" />
+        </div>
+      </div>
+      <div class="field inline full">
+        <p><bold><strong> Once you register as a donor, your name will be permanently recorded in our donor list, and we truly appreciate your thoughtful decision to help save lives</strong></bold></p><br>
+    </div>
+    <div class="consent full">
+  <label>
+    <input type="checkbox" id="consent" required />
+    I agree and I’m willing to donate blood.
+  </label>
+</div>
+
+      <div class="divider"></div>
+
+      <div class="btns">
+        <button type="reset">Clear</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="donor.js"></script>
+</body>
+</html>

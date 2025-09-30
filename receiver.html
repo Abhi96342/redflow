@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receiver Form</title>
+  <script src="doner.js" defer></script> 
+  <link rel="stylesheet" href="doner.css">
+</head>
+<body>
+  <form onsubmit="return validateForm()" action="register.php" method="post">
+    <fieldset>
+      <legend>Receiver Form</legend>
+
+      <div class="page">
+        <header>
+          <div class="title upper lg">REDFLOW</div>
+          <div class="title upper md">Receiver Questionnaire</div>
+        </header>
+
+        <div class="subtitle">Please complete this form</div>
+
+        <div class="grid">
+          <div class="field inline">
+            <label for="Name">Name:</label>
+            <input id="Name" name="Name" type="text" />
+          </div>
+
+          <div class="field inline">
+            <label for="familyName">Patient name:</label>
+            <input id="familyName" name="familyName" type="text" />
+          </div>
+
+          <div class="field inline">
+            <label for="dob">Date of birth:</label>
+            <input id="dob" name="dob" type="date" />
+          </div>
+
+          <div class="field inline">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+              <option value=""></option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field inline">
+            <label for="bloodGroup">Blood Group:</label>
+            <select id="bloodGroup" name="bloodGroup">
+              <option value=""></option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+          </div>
+
+          <div class="field inline full">
+            <label for="residential">Residential address:</label>
+            <input id="residential" name="residential" type="text" />
+          </div>
+
+          <div class="field inline">
+            <label for="phoneMobile">Mobile:</label>
+            <input id="phoneMobile" name="phoneMobile" type="tel" />
+          </div>
+
+          <div class="field inline">
+            <label for="email">E-mail address:</label>
+            <input id="email" name="email" type="email" />
+          </div>
+
+          <div class="field inline">
+            <label for="hospital">Hospital name:</label>
+            <input id="hospitalName" name="hospitalName" type="text" />
+          </div>
+
+          <div class="field inline">
+            <label for="hospitalLocation">Hospital location:</label>
+            <input id="hospitalLocation" name="hospitalLocation" type="text" />
+          </div>
+
+          <div class="field">
+            <label for="requestDateTime">Required Date & Time:</label>
+            <input type="datetime-local" id="requestDateTime" name="requestDateTime" required />
+          </div>
+
+          <div class="field inline">
+            <label for="doctor">Doctor's name:</label>
+            <input id="doctor" name="doctor" type="text" />
+          </div>
+
+          <!-- Checkbox -->
+<div class="field inline">
+  <span>Are you looking for blood?</span>
+  <input type="checkbox" id="donateorgan" onclick="toggleBloodList()" />
+</div>
+
+<!-- Blood Group Section (Initially Hidden) -->
+<div id="bloodGroupSection" style="display:none;">
+  <label for="bloodgroup">Blood Group:</label>
+  <select id="bloodgroup" name="bloodgroup">
+    <option value="">-- Select --</option>
+    <option value="A+">A+</option>
+    <option value="A-">A-</option>
+    <option value="B+">B+</option>
+    <option value="B-">B-</option>
+    <option value="AB+">AB+</option>
+    <option value="AB-">AB-</option>
+    <option value="O+">O+</option>
+    <option value="O-">O-</option>
+  </select>
+</div>
+
+          <!-- Organ Section -->
+          <div class="consent">
+            <label style="display: inline-flex; align-items: center; gap: 6px;">
+              <span>Are you looking for organs?</span>
+              <input type="checkbox" id="donateOrgan" onclick="toggleOrganList()" />
+            </label>
+          </div><br>
+
+          <div class="consent" id="organList" style="display: none; margin-top: 12px;">
+            <p><strong>Select Organs:</strong></p>
+            <label><input type="checkbox" name="organs[]" value="kidney"> Kidney</label><br>
+            <label><input type="checkbox" name="organs[]" value="liver"> Liver</label><br>
+            <label><input type="checkbox" name="organs[]" value="heart"> Heart</label><br>
+            <label><input type="checkbox" name="organs[]" value="lungs"> Lungs</label><br>
+            <label><input type="checkbox" name="organs[]" value="pancreas"> Pancreas</label><br>
+            <label><input type="checkbox" name="organs[]" value="eyes"> Eyes (Cornea)</label>
+          </div>
+
+          <br><div class="field full">
+            <label for="reason">Reason for needing Organ/Blood:</label>
+            <input id="reason" name="reason" type="text" />
+          </div>
+          <!-- Consent & Declaration inside fieldset -->
+          <div class="field full">
+            <label>
+              I hereby declare that the information provided is true to the best of my knowledge and I consent to the use of my medical details for receiving blood/organ as per medical guidelines.
+            <input type="checkbox" id="consent" name="consent" required>
+            </label>
+          </div>
+
+          <div class="field inline">
+            <label for="signature">Signature of Applicant:</label>
+            <input type="text" id="signature" name="signature" placeholder="Enter full name as signature" required />
+          </div>
+
+          <div class="field inline">
+            <label for="consentDate">Date:</label>
+            <input type="date" id="consentDate" name="consentDate" required />
+          </div>
+
+          <div class="field inline full">
+            <button type="submit">Submit</button>
+          </div>
+        </div> <!-- .grid -->
+      </div> <!-- .page -->
+    </fieldset>
+  </form>
+</body>
+</html>

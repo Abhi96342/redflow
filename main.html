@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedFlow</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://kit.fontawesome.com/085c00ded6.js" crossorigin="anonymous"></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <!-- Header and navigation -->
+  <header>
+    <nav>
+      <ul class="nav-1">
+        <li><img class="logo" src="redflow-logo.png" alt="RedFlow Logo"></li>
+      </ul>
+      <ul class="nav-2">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#aboutus">About</a></li>
+        <li><a href="#how-it-works">How it Works</a></li>
+        <li><a href="#Q&A">Q & A</a></li>
+        <li><a href="#contactus">Contact</a></li>
+      </ul>
+      <ul class="nav-3">
+        <li><button id="model" class="model">Sign in</button></li>
+      </ul>
+    </nav>
+
+    <!-- Login Overlay -->
+    <div class="overlay" id="loginOverlay">
+      <div class="popup">
+        <div class="form-heading">
+          <h3>Login</h3>
+          <button class="close" onclick="closePopup('loginOverlay')">
+            <i class="fa-solid fa-xmark fa-2x"></i>
+          </button>
+        </div>
+        <form id="loginForm">
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <label><input type="checkbox"> Remember Me</label>
+          <button type="submit">Login</button>
+          <p>Don't have an account? 
+            <a href="#" onclick="switchPopup('loginOverlay','signupOverlay')">Sign up and get started</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Signup Overlay -->
+    <div class="overlay overlay-signin" id="signupOverlay">
+      <div class="popup">
+        <div class="form-heading">
+          <h3>Sign Up</h3>
+          <button class="close" onclick="closePopup('signupOverlay')">
+            <i class="fa-solid fa-xmark fa-2x"></i>
+          </button>
+        </div>
+        <form id="registerForm">
+          <fieldset>
+            <legend>Registration Form</legend>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+            <label for="emailRegister">Email:</label>
+            <input type="email" id="emailRegister" name="email" required>
+            <small id="emailError" style="color:red; display:none;">Invalid email format</small>
+
+            <label for="passwordRegister">Password:</label>
+            <input type="password" id="passwordRegister" name="pass" required>
+
+            <label for="confirmPasswordRegister">Confirm Password:</label>
+            <input type="password" id="confirmPasswordRegister" name="confirmPass" required>
+            <small id="passError" style="color:red; display:none;">Passwords do not match</small>
+
+            <label>Gender:</label>
+            <div class="gender-group">
+              <input type="radio" name="gender" value="male" id="male" required>
+              <label for="male">Male</label>
+              <input type="radio" name="gender" value="female" id="female">
+              <label for="female">Female</label>
+              <input type="radio" name="gender" value="others" id="others">
+              <label for="others">Others</label>
+            </div>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="city">City:</label>
+            <textarea id="city" name="city" required></textarea>
+
+            <input type="submit" value="Submit">
+          </fieldset>
+          <p>Already have an account? 
+            <a href="#" onclick="switchPopup('signupOverlay','loginOverlay')">Login</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="home" id="hero">
+      <div class="home-quote">
+<h2>"Every drop counts, every organ matters. Your donation can give someone a second chance at life."</h2>
+      </div>
+      <div class="home-pic">
+        <img src="redflow-logo.png" alt="Hero Image">
+      </div>
+    </section>
+  </header>
+
+  <!-- About Section -->
+  <section class="about" id="aboutus">
+    <div class="abt-pic"><img src="about-picture.png" alt="About"></div>
+    <div class="abt">
+      <h3>ABOUT US</h3>
+      <p>RedFlow connects donors and recipients to save lives. We aim to create a trusted network for blood and organ donation, ensuring help reaches those in urgent need.</p>
+<p>By registering as a donor, you become part of a life-saving mission. Every donation of blood or organs can change lives and bring hope to countless families.</p>
+
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-section" id="how-it-works">
+    <div class="how-heading"><h3>How it Works?</h3></div>
+    <div class="how-body">
+      <div class="how">
+        <i class="fa-solid fa-sheet-plastic fa-2x"></i>
+        <h5>Register as a Donor</h5>
+        <p>Sign up on RedFlow by providing your details. Choose whether to donate blood, organs, or both, and join our network of life-savers</p>
+      </div>
+      <div class="how">
+        <i class="fa-solid fa-handshake fa-2x"></i>
+        <h5>Connect with Recipients</h5>
+        <p>Our platform helps match donors with patients in need based on location and compatibility, ensuring timely support.</p>
+      </div>
+      <div class="how">
+        <i class="fa-solid fa-droplet fa-2x"></i>
+        <h5>Donate Safely</h5>
+        <p>Follow our verified guidelines to donate blood at centers or register your organ donation intentions safely and securely.</p>
+      </div>
+      <div class="how">
+        <i class="fa-solid fa-hand-holding-heart fa-2x"></i>
+        <h5>Save Lives</h5>
+        <p>Every donation can save multiple lives. Your contribution helps families, communities, and strengthens the culture of giving</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q&A Section -->
+  <section class="q-a-section" id="Q&A">
+    <div class="q-a-heading"><h3>Frequently Asked Questions</h3></div>
+    <div class="detail-box">
+      <details>
+        <summary>Q1: What is HTML? <i class="fa-solid fa-angle-down icon"></i></summary>
+        <p>HTML stands for HyperText Markup Language. It structures web content.</p>
+      </details>
+      <details>
+        <summary>Q2: What is CSS? <i class="fa-solid fa-angle-down icon"></i></summary>
+        <p>CSS is used to style HTML elements and control their layout.</p>
+      </details>
+      <details>
+        <summary>Q3: What is JavaScript? <i class="fa-solid fa-angle-down icon"></i></summary>
+        <p>JavaScript makes web pages interactive and dynamic.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contactus">
+    <div class="contact-left">
+      <img src="q&a-img.png" alt="Contact">
+    </div>
+    <div class="contact-right">
+      <h3>Contact Us</h3>
+      <p>Follow us on social media to stay updated on donation drives and awareness campaigns.</p>
+      <ul>
+        <li><i class="fa-solid fa-envelope"></i> redflow@gmail.com</li>
+        <li><i class="fa-solid fa-phone"></i> +91 9748345903</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <ul>
+      <li><i class="fa-brands fa-facebook"></i></li>
+      <li><i class="fa-brands fa-instagram"></i></li>
+      <li><i class="fa-brands fa-github"></i></li>
+    </ul>
+    <p class="text-center">&copy; 2025 RedFlow. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
