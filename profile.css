@@ -171,7 +171,7 @@ form div {
 }/*# sourceMappingURL=profile.css.map */
     .section {
       margin: 0;
-      height: 100vh;
+      height: 200px;
       display: flex;
       justify-content: center; /* center horizontally */
       align-items: center;    /* center vertically */
@@ -181,6 +181,8 @@ form div {
 
     .button-container {
       display: flex;
+      justify-content: center;
+       margin-top: 20px;
       gap: 25px; /* spacing between buttons */
     }
 
@@ -193,7 +195,7 @@ form div {
       cursor: pointer;
       transition: 0.3s;
       width: 200px;
-      height: 200px;
+      height: 100px;
       text-align: center;
     }
 
@@ -353,5 +355,55 @@ form div {
 .nav-center h1 {
   margin: 0;
   font-size: 24px;
+  color: #333;
+}
+
+
+.rules-section {
+  padding: 50px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.rules-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #b30000;
+}
+
+.rules-section .intro {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.rules-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.rule-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.rule-card h3 {
+  color: #e60000;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.rule-card ul {
+  padding-left: 20px;
+}
+
+.rule-card ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
   color: #333;
 }
